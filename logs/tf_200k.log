@@ -1,0 +1,67 @@
+2026-11-24 22:14:32.828276: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-24 22:14:32.828398: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-24 22:14:32.829674: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow_hub/__init__.py:61: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+[data] 200k: train=2211861 val=28932 test=29493 classes=['BACKGROUND', 'CONCLUSIONS', 'METHODS', 'OBJECTIVE', 'RESULTS']
+[prep] seq_len=54 char_len=284 vocab=68000 chars=28
+[model 0] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_0.json to rerun)
+[model 1] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_1.json to rerun)
+[model 2] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_2.json to rerun)
+[model 3] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_3.json to rerun)
+[model 4] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_4.json to rerun)
+[model 5] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_5.json to rerun)
+[encode] bert train: (2211861, 768)
+[encode] bert val: (28932, 768)
+[encode] bert test: (29493, 768)
+Epoch 1/5
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795543205.549823  122455 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+
+Epoch 1: val_accuracy improved from -inf to 0.89884, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/200k/best_model_6.weights.h5
+69121/69121 - 1419s - loss: 0.8486 - accuracy: 0.8891 - val_loss: 0.8235 - val_accuracy: 0.8988 - 1419s/epoch - 21ms/step
+Epoch 2/5
+
+Epoch 2: val_accuracy improved from 0.89884 to 0.90394, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/200k/best_model_6.weights.h5
+69121/69121 - 1420s - loss: 0.8411 - accuracy: 0.8936 - val_loss: 0.8220 - val_accuracy: 0.9039 - 1420s/epoch - 21ms/step
+Epoch 3/5
+
+Epoch 3: val_accuracy did not improve from 0.90394
+69121/69121 - 1446s - loss: 0.8397 - accuracy: 0.8946 - val_loss: 0.8219 - val_accuracy: 0.8991 - 1446s/epoch - 21ms/step
+Epoch 4/5
+
+Epoch 4: val_accuracy did not improve from 0.90394
+69121/69121 - 1428s - loss: 0.8389 - accuracy: 0.8951 - val_loss: 0.8240 - val_accuracy: 0.9032 - 1428s/epoch - 21ms/step
+Epoch 5/5
+
+Epoch 5: val_accuracy did not improve from 0.90394
+69121/69121 - 1420s - loss: 0.8383 - accuracy: 0.8953 - val_loss: 0.8213 - val_accuracy: 0.9028 - 1420s/epoch - 21ms/step
+[model 6] Transformer-BERT model: val acc=89.86 f1=0.8979 | test acc=89.59 f1=0.8951 (120.5 min)
+WARNING:tensorflow:Layer block_query_lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer block_query_lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer block_value_lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer block_value_lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/keras/src/initializers/initializers.py:120: UserWarning: The initializer GlorotNormal is unseeded and being called multiple times, which will return identical values each time (even if the initializer is unseeded). Please update your code to provide a seed to the initializer, or avoid using the same initializer instance more than once.
+  warnings.warn(
+Epoch 1/5
+
+Epoch 1: val_accuracy improved from -inf to 0.85805, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/200k/best_model_7.weights.h5
+69121/69121 - 600s - loss: 0.6765 - accuracy: 0.8500 - val_loss: 0.6589 - val_accuracy: 0.8580 - lr: 0.0010 - 600s/epoch - 9ms/step
+Epoch 2/5
+
+Epoch 2: val_accuracy did not improve from 0.85805
+69121/69121 - 589s - loss: 0.6556 - accuracy: 0.8597 - val_loss: 0.6582 - val_accuracy: 0.8576 - lr: 0.0010 - 589s/epoch - 9ms/step
+Epoch 3/5
+
+Epoch 3: val_accuracy improved from 0.85805 to 0.85822, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/200k/best_model_7.weights.h5
+69121/69121 - 600s - loss: 0.6505 - accuracy: 0.8627 - val_loss: 0.6579 - val_accuracy: 0.8582 - lr: 0.0010 - 600s/epoch - 9ms/step
+Epoch 4/5
+
+Epoch 4: val_accuracy improved from 0.85822 to 0.85853, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/200k/best_model_7.weights.h5
+69121/69121 - 586s - loss: 0.6473 - accuracy: 0.8644 - val_loss: 0.6609 - val_accuracy: 0.8585 - lr: 0.0010 - 586s/epoch - 8ms/step
+Epoch 5/5
+
+Epoch 5: val_accuracy improved from 0.85853 to 0.85998, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/200k/best_model_7.weights.h5
+69121/69121 - 596s - loss: 0.6440 - accuracy: 0.8663 - val_loss: 0.6555 - val_accuracy: 0.8600 - lr: 0.0010 - 596s/epoch - 9ms/step
+[model 7] Self Attention model: val acc=86.00 f1=0.8584 | test acc=85.83 f1=0.8567 (49.6 min)
+[done] total 245.9 min. Run: python make_report.py --framework tf --dataset 200k

@@ -1,0 +1,23 @@
+2026-11-24 21:42:59.575867: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-24 21:42:59.575963: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-24 21:42:59.577908: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow_hub/__init__.py:61: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+[data] 200k: train=2211861 val=28932 test=29493 classes=['BACKGROUND', 'CONCLUSIONS', 'METHODS', 'OBJECTIVE', 'RESULTS']
+[prep] seq_len=54 char_len=284 vocab=68000 chars=28
+[model 0] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_0.json to rerun)
+[model 1] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_1.json to rerun)
+[model 2] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_2.json to rerun)
+[model 3] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_3.json to rerun)
+[model 4] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_4.json to rerun)
+Epoch 1/2
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795536894.953842   90313 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+
+Epoch 1: val_accuracy improved from -inf to 0.85139, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/200k/best_model_5.weights.h5
+6912/6912 - 205s - loss: 0.9406 - accuracy: 0.8290 - val_loss: 0.9115 - val_accuracy: 0.8514 - 205s/epoch - 30ms/step
+Epoch 2/2
+
+Epoch 2: val_accuracy improved from 0.85139 to 0.86042, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/200k/best_model_5.weights.h5
+6912/6912 - 189s - loss: 0.9078 - accuracy: 0.8517 - val_loss: 0.8960 - val_accuracy: 0.8604 - 189s/epoch - 27ms/step
+[model 5] tribrid_pos_char_token_embed: val acc=86.13 f1=0.8590 | test acc=86.16 f1=0.8595 (7.0 min)

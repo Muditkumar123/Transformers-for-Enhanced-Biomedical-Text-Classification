@@ -1,0 +1,10 @@
+# Python 3.10. Versions used for the reported TF runs.
+tensorflow[and-cuda]==2.15.1
+tensorflow-hub==0.16.1
+tensorflow-text==2.15.0
+setuptools<81  # tensorflow-hub imports pkg_resources
+numpy==1.26.4
+pandas==2.3.3
+scikit-learn==1.7.2
+matplotlib==3.10.9
+tabulate==0.10.0

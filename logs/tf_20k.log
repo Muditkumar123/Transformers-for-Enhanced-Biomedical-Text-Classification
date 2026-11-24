@@ -1,0 +1,98 @@
+2026-11-24 19:15:24.953040: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-24 19:15:24.953109: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-24 19:15:24.954754: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow_hub/__init__.py:61: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+[data] 20k: train=180040 val=30212 test=30135 classes=['BACKGROUND', 'CONCLUSIONS', 'METHODS', 'OBJECTIVE', 'RESULTS']
+[prep] seq_len=55 char_len=290 vocab=64841 chars=28
+[model 0] baseline: val acc=72.18 f1=0.6989 | test acc=71.67 f1=0.6925 (0.1 min)
+Epoch 1/3
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795527947.445391 4098484 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+562/562 - 22s - loss: 0.9217 - accuracy: 0.6383 - val_loss: 0.6820 - val_accuracy: 0.7397 - 22s/epoch - 40ms/step
+Epoch 2/3
+562/562 - 6s - loss: 0.6549 - accuracy: 0.7585 - val_loss: 0.6274 - val_accuracy: 0.7709 - 6s/epoch - 10ms/step
+Epoch 3/3
+562/562 - 5s - loss: 0.6152 - accuracy: 0.7767 - val_loss: 0.5942 - val_accuracy: 0.7862 - 5s/epoch - 8ms/step
+[model 1] custom_token_embed_conv1d: val acc=78.77 f1=0.7855 | test acc=78.24 f1=0.7805 (0.6 min)
+Epoch 1/3
+562/562 - 14s - loss: 0.9154 - accuracy: 0.6496 - val_loss: 0.7955 - val_accuracy: 0.6905 - 14s/epoch - 24ms/step
+Epoch 2/3
+562/562 - 10s - loss: 0.7678 - accuracy: 0.7009 - val_loss: 0.7541 - val_accuracy: 0.7045 - 10s/epoch - 17ms/step
+Epoch 3/3
+562/562 - 10s - loss: 0.7512 - accuracy: 0.7124 - val_loss: 0.7376 - val_accuracy: 0.7154 - 10s/epoch - 17ms/step
+[model 2] pretrained_token_embed: val acc=71.45 f1=0.7116 | test acc=70.82 f1=0.7057 (1.0 min)
+Epoch 1/3
+562/562 - 5s - loss: 1.2525 - accuracy: 0.4908 - val_loss: 1.0321 - val_accuracy: 0.5844 - 5s/epoch - 8ms/step
+Epoch 2/3
+562/562 - 3s - loss: 1.0003 - accuracy: 0.6021 - val_loss: 0.9385 - val_accuracy: 0.6203 - 3s/epoch - 5ms/step
+Epoch 3/3
+562/562 - 3s - loss: 0.9256 - accuracy: 0.6430 - val_loss: 0.8717 - val_accuracy: 0.6652 - 3s/epoch - 5ms/step
+[model 3] custom_char_embed_conv1d: val acc=65.68 f1=0.6476 | test acc=65.12 f1=0.6416 (0.2 min)
+Epoch 1/3
+562/562 - 32s - loss: 0.9919 - accuracy: 0.6029 - val_loss: 0.7870 - val_accuracy: 0.6988 - 32s/epoch - 57ms/step
+Epoch 2/3
+562/562 - 21s - loss: 0.8081 - accuracy: 0.6896 - val_loss: 0.7193 - val_accuracy: 0.7307 - 21s/epoch - 38ms/step
+Epoch 3/3
+562/562 - 20s - loss: 0.7756 - accuracy: 0.7038 - val_loss: 0.6980 - val_accuracy: 0.7370 - 20s/epoch - 36ms/step
+[model 4] hybrid_char_token_embed: val acc=73.38 f1=0.7314 | test acc=72.67 f1=0.7241 (1.8 min)
+Epoch 1/2
+
+Epoch 1: val_accuracy improved from -inf to 0.80585, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/20k/best_model_5.weights.h5
+562/562 - 33s - loss: 1.0955 - accuracy: 0.7239 - val_loss: 0.9810 - val_accuracy: 0.8059 - 33s/epoch - 59ms/step
+Epoch 2/2
+
+Epoch 2: val_accuracy improved from 0.80585 to 0.82347, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/20k/best_model_5.weights.h5
+562/562 - 25s - loss: 0.9675 - accuracy: 0.8146 - val_loss: 0.9514 - val_accuracy: 0.8235 - 25s/epoch - 45ms/step
+[model 5] tribrid_pos_char_token_embed: val acc=81.96 f1=0.8184 | test acc=81.43 f1=0.8130 (1.5 min)
+Epoch 1/5
+
+Epoch 1: val_accuracy improved from -inf to 0.87722, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/20k/best_model_6.weights.h5
+5627/5627 - 997s - loss: 0.8846 - accuracy: 0.8701 - val_loss: 0.8625 - val_accuracy: 0.8772 - 997s/epoch - 177ms/step
+Epoch 2/5
+
+Epoch 2: val_accuracy did not improve from 0.87722
+5627/5627 - 1056s - loss: 0.8565 - accuracy: 0.8854 - val_loss: 0.8570 - val_accuracy: 0.8757 - 1056s/epoch - 188ms/step
+Epoch 3/5
+
+Epoch 3: val_accuracy improved from 0.87722 to 0.88497, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/20k/best_model_6.weights.h5
+5627/5627 - 1063s - loss: 0.8511 - accuracy: 0.8880 - val_loss: 0.8481 - val_accuracy: 0.8850 - 1063s/epoch - 189ms/step
+Epoch 4/5
+
+Epoch 4: val_accuracy improved from 0.88497 to 0.88652, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/20k/best_model_6.weights.h5
+5627/5627 - 1002s - loss: 0.8480 - accuracy: 0.8901 - val_loss: 0.8457 - val_accuracy: 0.8865 - 1002s/epoch - 178ms/step
+Epoch 5/5
+
+Epoch 5: val_accuracy improved from 0.88652 to 0.88896, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/20k/best_model_6.weights.h5
+5627/5627 - 979s - loss: 0.8453 - accuracy: 0.8917 - val_loss: 0.8416 - val_accuracy: 0.8890 - 979s/epoch - 174ms/step
+[model 6] Transformer-BERT model: val acc=88.71 f1=0.8838 | test acc=88.41 f1=0.8809 (89.9 min)
+WARNING:tensorflow:Layer block_query_lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer block_query_lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer block_value_lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer block_value_lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/keras/src/initializers/initializers.py:120: UserWarning: The initializer GlorotNormal is unseeded and being called multiple times, which will return identical values each time (even if the initializer is unseeded). Please update your code to provide a seed to the initializer, or avoid using the same initializer instance more than once.
+  warnings.warn(
+Epoch 1/5
+
+Epoch 1: val_accuracy improved from -inf to 0.84344, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/20k/best_model_7.weights.h5
+5627/5627 - 250s - loss: 0.7427 - accuracy: 0.8213 - val_loss: 0.6942 - val_accuracy: 0.8434 - lr: 0.0010 - 250s/epoch - 44ms/step
+Epoch 2/5
+
+Epoch 2: val_accuracy improved from 0.84344 to 0.84612, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/20k/best_model_7.weights.h5
+5627/5627 - 247s - loss: 0.6840 - accuracy: 0.8490 - val_loss: 0.6854 - val_accuracy: 0.8461 - lr: 0.0010 - 247s/epoch - 44ms/step
+Epoch 3/5
+
+Epoch 3: val_accuracy improved from 0.84612 to 0.84718, saving model to /home/mudit25073/MediParse-recreation/checkpoints/tf/20k/best_model_7.weights.h5
+5627/5627 - 195s - loss: 0.6649 - accuracy: 0.8584 - val_loss: 0.6850 - val_accuracy: 0.8472 - lr: 0.0010 - 195s/epoch - 35ms/step
+Epoch 4/5
+
+Epoch 4: val_accuracy did not improve from 0.84718
+5627/5627 - 132s - loss: 0.6509 - accuracy: 0.8663 - val_loss: 0.6865 - val_accuracy: 0.8458 - lr: 0.0010 - 132s/epoch - 23ms/step
+Epoch 5/5
+
+Epoch 5: ReduceLROnPlateau reducing learning rate to 0.00010000000474974513.
+
+Epoch 5: val_accuracy did not improve from 0.84718
+5627/5627 - 121s - loss: 0.6395 - accuracy: 0.8729 - val_loss: 0.6898 - val_accuracy: 0.8455 - lr: 0.0010 - 121s/epoch - 22ms/step
+[model 7] Self Attention model: val acc=84.72 f1=0.8433 | test acc=84.46 f1=0.8406 (16.5 min)
+[done] total 112.3 min. Run: python make_report.py --framework tf --dataset 20k

@@ -1,0 +1,69 @@
+2026-11-24 21:18:07.021518: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-24 21:18:07.021654: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-24 21:18:07.022736: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow_hub/__init__.py:61: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+[data] 200k: train=2211861 val=28932 test=29493 classes=['BACKGROUND', 'CONCLUSIONS', 'METHODS', 'OBJECTIVE', 'RESULTS']
+[prep] seq_len=54 char_len=284 vocab=68000 chars=28
+[model 0] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_0.json to rerun)
+[model 1] already done, skipping (delete /home/mudit25073/MediParse-recreation/results/tf/200k/model_1.json to rerun)
+[encode] use train: (2211861, 512)
+[encode] use val: (28932, 512)
+[encode] use test: (29493, 512)
+Epoch 1/3
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795536030.829844   58426 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+6912/6912 - 14s - loss: 0.6957 - accuracy: 0.7350 - val_loss: 0.6286 - val_accuracy: 0.7573 - 14s/epoch - 2ms/step
+Epoch 2/3
+6912/6912 - 12s - loss: 0.6225 - accuracy: 0.7643 - val_loss: 0.6016 - val_accuracy: 0.7667 - 12s/epoch - 2ms/step
+Epoch 3/3
+6912/6912 - 12s - loss: 0.6000 - accuracy: 0.7738 - val_loss: 0.5833 - val_accuracy: 0.7736 - 12s/epoch - 2ms/step
+[model 2] pretrained_token_embed: val acc=77.65 f1=0.7740 | test acc=77.77 f1=0.7752 (0.7 min)
+Epoch 1/3
+6912/6912 - 25s - loss: 0.8422 - accuracy: 0.6756 - val_loss: 0.7487 - val_accuracy: 0.7219 - 25s/epoch - 4ms/step
+Epoch 2/3
+6912/6912 - 22s - loss: 0.7209 - accuracy: 0.7286 - val_loss: 0.7323 - val_accuracy: 0.7208 - 22s/epoch - 3ms/step
+Epoch 3/3
+6912/6912 - 22s - loss: 0.6969 - accuracy: 0.7394 - val_loss: 0.6744 - val_accuracy: 0.7517 - 22s/epoch - 3ms/step
+[model 3] custom_char_embed_conv1d: val acc=75.12 f1=0.7443 | test acc=74.80 f1=0.7410 (1.2 min)
+Epoch 1/3
+6912/6912 - 188s - loss: 0.7318 - accuracy: 0.7229 - val_loss: 0.6053 - val_accuracy: 0.7618 - 188s/epoch - 27ms/step
+Epoch 2/3
+6912/6912 - 173s - loss: 0.6671 - accuracy: 0.7519 - val_loss: 0.5764 - val_accuracy: 0.7774 - 173s/epoch - 25ms/step
+Epoch 3/3
+6912/6912 - 175s - loss: 0.6481 - accuracy: 0.7578 - val_loss: 0.5598 - val_accuracy: 0.7826 - 175s/epoch - 25ms/step
+[model 4] hybrid_char_token_embed: val acc=78.25 f1=0.7788 | test acc=78.39 f1=0.7799 (9.3 min)
+Traceback (most recent call last):
+  File "/home/mudit25073/MediParse-recreation/medi_parse_tf.py", line 251, in <module>
+    tr = tribrid_ds("train", text_feed("use", "train"), train_chars, train_labels_one_hot)
+  File "/home/mudit25073/MediParse-recreation/medi_parse_tf.py", line 167, in tribrid_ds
+    return ds((pos[split][0], pos[split][1], sentences, chars), labels)
+  File "/home/mudit25073/MediParse-recreation/medi_parse_tf.py", line 65, in ds
+    return tf.data.Dataset.from_tensor_slices((x, y)).batch(bs).prefetch(tf.data.AUTOTUNE)
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 825, in from_tensor_slices
+    return from_tensor_slices_op._from_tensor_slices(tensors, name)
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/data/ops/from_tensor_slices_op.py", line 25, in _from_tensor_slices
+    return _TensorSliceDataset(tensors, name=name)
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/data/ops/from_tensor_slices_op.py", line 33, in __init__
+    element = structure.normalize_element(element)
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/data/util/structure.py", line 134, in normalize_element
+    ops.convert_to_tensor(t, name="component_%d" % i, dtype=dtype))
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/profiler/trace.py", line 183, in wrapped
+    return func(*args, **kwargs)
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/framework/ops.py", line 696, in convert_to_tensor
+    return tensor_conversion_registry.convert(
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/framework/tensor_conversion_registry.py", line 234, in convert
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/framework/constant_op.py", line 335, in _constant_tensor_conversion_function
+    return constant(v, dtype=dtype, name=name)
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/ops/weak_tensor_ops.py", line 142, in wrapper
+    return op(*args, **kwargs)
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/framework/constant_op.py", line 271, in constant
+    return _constant_impl(value, dtype, shape, name, verify_shape=False,
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/framework/constant_op.py", line 284, in _constant_impl
+    return _constant_eager_impl(ctx, value, dtype, shape, verify_shape)
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/framework/constant_op.py", line 296, in _constant_eager_impl
+    t = convert_to_eager_tensor(value, ctx, dtype)
+  File "/home/mudit25073/miniconda3/envs/mudit_env/lib/python3.10/site-packages/tensorflow/python/framework/constant_op.py", line 103, in convert_to_eager_tensor
+    return ops.EagerTensor(value, ctx.device_name, dtype)
+tensorflow.python.framework.errors_impl.InternalError: Failed copying input tensor from /job:localhost/replica:0/task:0/device:CPU:0 to /job:localhost/replica:0/task:0/device:GPU:0 in order to run _EagerConst: Dst tensor is not initialized.

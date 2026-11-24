@@ -1,0 +1,9 @@
+model,name,accuracy,precision,recall,f1,train_min
+0,baseline,0.7498,0.7432,0.7498,0.7390,0.5883
+1,custom_token_embed_conv1d,0.8367,0.8393,0.8367,0.8348,1.5283
+2,pretrained_token_embed,0.8237,0.8244,0.8237,0.8227,4.4567
+3,custom_char_embed_conv1d,0.7481,0.7383,0.7481,0.7408,3.7067
+4,hybrid_char_token_embed,0.8206,0.8199,0.8206,0.8186,11.3383
+5,tribrid_pos_char_token_embed,0.8784,0.8833,0.8784,0.8763,8.3600
+6,Transformer-BERT model,0.9000,0.9008,0.9000,0.8990,53.9783
+7,Self Attention model,0.8857,0.8874,0.8857,0.8847,25.7500
